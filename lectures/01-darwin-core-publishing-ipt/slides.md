@@ -565,3 +565,21 @@ layout: default
 </span>
 
 <DwcDpSolution />
+
+---
+layout: default
+---
+
+<HopeThereAreTools />
+
+---
+layout: default
+---
+
+# Meet the Integrated Publishing Toolkit (IPT)
+
+<span class="text-xs text-slate-300 block -mt-2 mb-2">
+  GBIF's open-source web application designed to manage, document, and publish biodiversity datasets without writing raw XML or JSON.
+</span>
+
+<IptIntro />
