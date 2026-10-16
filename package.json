@@ -1,0 +1,26 @@
+{
+  "name": "open-science-course-lectures",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "dev": "slidev lectures/01-darwin-core-publishing-ipt/slides.md",
+    "dev:01": "slidev lectures/01-darwin-core-publishing-ipt/slides.md --open",
+    "dev:02": "slidev lectures/02-open-data-and-code/slides.md --open",
+    "build": "node scripts/build-all.mjs",
+    "build:quick": "node scripts/build-all.mjs --skip-pdf",
+    "export:pdf": "node scripts/build-all.mjs --pdf-only",
+    "new-lecture": "node scripts/new-lecture.mjs"
+  },
+  "bugs": {
+    "url": "https://github.com/MichalTorma/Open-Science-Course-lectures/issues"
+  },
+  "homepage": "https://github.com/MichalTorma/Open-Science-Course-lectures#readme",
+  "devDependencies": {
+    "@slidev/cli": "^53.0.0",
+    "@slidev/theme-default": "^0.25.0",
+    "@slidev/theme-seriph": "^0.25.0",
+    "gray-matter": "^4.0.3",
+    "playwright-chromium": "^1.64.1"
+  }
+}
