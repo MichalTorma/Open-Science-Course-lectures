@@ -449,7 +449,7 @@ layout: default
 
 A single flat table cannot cleanly model **one-to-many (1:N)** biological relationships. A **Darwin Core Archive (DwC-A)** solves this using a **Star Schema**:
 
-<div class="mt-4">
+<div class="mt-2">
   <StarSchemaDiagram />
 </div>
 
@@ -583,3 +583,129 @@ layout: default
 </span>
 
 <IptIntro />
+
+---
+layout: default
+---
+
+# IPT Workflow · Step 1: Source Data
+
+<span class="text-xs text-slate-300 block -mt-2 mb-2">
+  Connecting raw observation files or live database queries to the IPT resource.
+</span>
+
+<IptStep1 />
+
+---
+layout: default
+---
+
+# IPT Workflow · Step 2: Darwin Core Mappings
+
+<span class="text-xs text-slate-300 block -mt-2 mb-2">
+  Translating local column headers into standardized Darwin Core terms and schemas.
+</span>
+
+<IptStep2 />
+
+---
+layout: default
+---
+
+# IPT Workflow · Step 3: Resource Metadata
+
+<span class="text-xs text-slate-300 block -mt-2 mb-2">
+  Describing the Who, What, Where, When, and Why using Ecological Metadata Language (EML).
+</span>
+
+<IptStep3 />
+
+---
+layout: default
+---
+
+# IPT Workflow · Step 4: Visibility & Registration
+
+<span class="text-xs text-slate-300 block -mt-2 mb-2">
+  Governing dataset access: from private local staging to endorsed public discovery.
+</span>
+
+<IptStep4 />
+
+---
+layout: default
+---
+
+# IPT Workflow · Step 5: Publication & Versioning
+
+<span class="text-xs text-slate-300 block -mt-2 mb-2">
+  Publishing major/minor versions, minting DOIs, and scheduling automated background sync.
+</span>
+
+<IptStep5 />
+
+---
+layout: default
+---
+
+# IPT Workflow · Step 6: GBIF Registration
+
+<span class="text-xs text-slate-300 block -mt-2 mb-2">
+  Attaching the dataset to an endorsed publishing institution and minting global registry keys.
+</span>
+
+<IptStepRegistration />
+
+---
+layout: default
+---
+
+# IPT Workflow · Step 7: Thematic Networks
+
+<span class="text-xs text-slate-300 block -mt-2 mb-2">
+  Connecting datasets to specialized global initiatives (e.g. OBIS, VertNet, national consortia).
+</span>
+
+<IptStepNetworks />
+
+---
+layout: default
+---
+
+# IPT Workflow · Step 8: Resource Managers
+
+<span class="text-xs text-slate-300 block -mt-2 mb-2">
+  Role-based access control, collaborative dataset curation, and institutional longevity.
+</span>
+
+<IptStepManagers />
+
+---
+layout: default
+---
+
+<CanAiHelpMe />
+
+---
+layout: default
+---
+
+# Meet ChatIPT: AI-Guided Biodiversity Publishing
+
+<span class="text-xs text-slate-300 block -mt-2 mb-2">
+  A modern, guided AI workspace designed for students and researchers to clean, connect, and prepare datasets for GBIF · <a href="https://chatipt.svc.gbif.no/" target="_blank" rel="noopener" class="text-emerald-400 font-mono font-semibold underline hover:text-emerald-300">chatipt.svc.gbif.no ↗</a>
+</span>
+
+<ChatIptIntro />
+
+---
+layout: default
+---
+
+# Hands-On Lab: Let's Try It!
+
+<span class="text-xs text-slate-300 block -mt-2 mb-2">
+  Put biodiversity data publishing into practice — choose your track:
+</span>
+
+<LetsTryIt />

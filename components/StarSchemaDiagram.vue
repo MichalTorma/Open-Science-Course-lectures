@@ -1,158 +1,172 @@
 <template>
-  <div class="w-full flex flex-col items-center gap-2 select-none">
-    <!-- Star Topology Grid (Left Satellites | Center Core Hub | Right Satellites) -->
-    <div class="w-full max-w-[880px] grid grid-cols-12 gap-3 items-center">
+  <div class="w-full flex flex-col items-center select-none py-0.5">
+    
+    <div class="relative w-full max-w-[880px] bg-slate-950/85 border border-slate-800 rounded-2xl p-2.5 shadow-2xl backdrop-blur-md flex flex-col items-center">
       
-      <!-- LEFT SATELLITES (2 Extensions) -->
-      <div class="col-span-4 flex flex-col gap-3">
-        <!-- Extension: Simple Multimedia -->
-        <div class="group relative rounded-xl bg-slate-900/95 border border-sky-500/40 p-2.5 shadow-md hover:border-sky-400 transition-all">
-          <div class="flex items-center justify-between pb-1 border-b border-slate-800">
-            <div class="flex items-center gap-1.5">
-              <span class="text-sm">📸</span>
-              <span class="text-xs font-bold text-sky-300">Simple Multimedia</span>
-            </div>
-            <span class="font-mono text-[9px] text-slate-400 bg-slate-800 px-1.5 py-0.5 rounded">multimedia.txt</span>
-          </div>
-          <div class="mt-1.5 text-[10.5px] text-slate-300 leading-snug">
-            1 occurrence ➔ N specimen photos, field audio, 3D scans
-          </div>
-          <div class="mt-1.5 flex items-center justify-between text-[10px] font-mono">
-            <span class="text-sky-400 bg-sky-950/60 border border-sky-800/60 px-1.5 py-0.5 rounded">FK: coreId</span>
-            <span class="text-slate-400">1 : N relation</span>
-          </div>
-          <!-- Spoke connector indicator pointing right -->
-          <div class="hidden md:flex absolute -right-3 top-1/2 -translate-y-1/2 w-3 h-0.5 bg-sky-400/60"></div>
-        </div>
-
-        <!-- Extension: DNA Derived Data -->
-        <div class="group relative rounded-xl bg-slate-900/95 border border-purple-500/40 p-2.5 shadow-md hover:border-purple-400 transition-all">
-          <div class="flex items-center justify-between pb-1 border-b border-slate-800">
-            <div class="flex items-center gap-1.5">
-              <span class="text-sm">🧬</span>
-              <span class="text-xs font-bold text-purple-300">DNA Derived Data</span>
-            </div>
-            <span class="font-mono text-[9px] text-slate-400 bg-slate-800 px-1.5 py-0.5 rounded">dna_extension.txt</span>
-          </div>
-          <div class="mt-1.5 text-[10.5px] text-slate-300 leading-snug">
-            1 occurrence ➔ N barcodes (COI, 16S, ITS), primers, assays
-          </div>
-          <div class="mt-1.5 flex items-center justify-between text-[10px] font-mono">
-            <span class="text-purple-400 bg-purple-950/60 border border-purple-800/60 px-1.5 py-0.5 rounded">FK: coreId</span>
-            <span class="text-slate-400">1 : N relation</span>
-          </div>
-          <!-- Spoke connector indicator pointing right -->
-          <div class="hidden md:flex absolute -right-3 top-1/2 -translate-y-1/2 w-3 h-0.5 bg-purple-400/60"></div>
-        </div>
-      </div>
-
-      <!-- CENTER: THE CORE HUB -->
-      <div class="col-span-4 relative flex flex-col items-center">
-        <!-- Connecting bridge lines on left and right -->
-        <div class="w-full relative rounded-2xl bg-gradient-to-b from-slate-900 via-sky-950/40 to-slate-900 border-2 border-sky-400/90 p-3 shadow-xl shadow-sky-500/20 text-center">
-          
-          <!-- Core badge -->
-          <div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-sky-500/20 border border-sky-400/50 text-sky-300 font-mono text-[10px] font-bold tracking-wider uppercase mb-1">
-            <span>⭐ Star Core Hub</span>
-            <span class="text-slate-400 font-normal">|</span>
-            <span>1 Record</span>
-          </div>
-
-          <div class="text-sm font-extrabold text-white tracking-tight">
-            dwc:Occurrence
-          </div>
-          <div class="font-mono text-[10px] text-sky-300/80 mb-2">
-            File: <span class="text-white font-semibold">occurrence.txt</span>
-          </div>
-
-          <!-- Primary Key Box -->
-          <div class="rounded-lg bg-slate-950/90 border border-sky-500/50 p-2 text-left mb-2">
-            <div class="flex items-center justify-between text-[10px] font-mono mb-0.5">
-              <span class="text-amber-400 font-semibold">Primary Key (PK)</span>
-              <span class="text-[9px] text-slate-400">Unique ID</span>
-            </div>
-            <div class="font-mono text-[10.5px] text-sky-200 font-bold break-all">
-              dwc:occurrenceID
-            </div>
-            <div class="text-[9px] font-mono text-slate-400 mt-0.5 truncate">
-              urn:uuid:8b3e8e2b-2e92-498c...
-            </div>
-          </div>
-
-          <!-- Core attributes pill -->
-          <div class="text-[9.5px] text-slate-300 bg-slate-800/60 border border-slate-700/60 rounded px-2 py-1 leading-tight">
-            <strong class="text-sky-300">Hub Attributes:</strong> Taxon · Coordinates · Date · BasisOfRecord
-          </div>
-
-          <!-- Topology Indicator -->
-          <div class="mt-2 pt-1.5 border-t border-slate-800 flex items-center justify-center gap-2 font-mono text-[9px] text-sky-400">
-            <span>⟵ 1 : N</span>
-            <span class="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse"></span>
-            <span>1 : N ⟶</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- RIGHT SATELLITES (2 Extensions) -->
-      <div class="col-span-4 flex flex-col gap-3">
-        <!-- Extension: MeasurementOrFact -->
-        <div class="group relative rounded-xl bg-slate-900/95 border border-amber-500/40 p-2.5 shadow-md hover:border-amber-400 transition-all">
-          <!-- Spoke connector indicator pointing left -->
-          <div class="hidden md:flex absolute -left-3 top-1/2 -translate-y-1/2 w-3 h-0.5 bg-amber-400/60"></div>
-          <div class="flex items-center justify-between pb-1 border-b border-slate-800">
-            <div class="flex items-center gap-1.5">
-              <span class="text-sm">📏</span>
-              <span class="text-xs font-bold text-amber-300">MeasurementOrFact</span>
-            </div>
-            <span class="font-mono text-[9px] text-slate-400 bg-slate-800 px-1.5 py-0.5 rounded">extendedmof.txt</span>
-          </div>
-          <div class="mt-1.5 text-[10.5px] text-slate-300 leading-snug">
-            1 occurrence ➔ N biometric traits, temperature, depth, weight
-          </div>
-          <div class="mt-1.5 flex items-center justify-between text-[10px] font-mono">
-            <span class="text-amber-400 bg-amber-950/60 border border-amber-800/60 px-1.5 py-0.5 rounded">FK: coreId</span>
-            <span class="text-slate-400">1 : N relation</span>
-          </div>
-        </div>
-
-        <!-- Extension: Resource Relationship -->
-        <div class="group relative rounded-xl bg-slate-900/95 border border-rose-500/40 p-2.5 shadow-md hover:border-rose-400 transition-all">
-          <!-- Spoke connector indicator pointing left -->
-          <div class="hidden md:flex absolute -left-3 top-1/2 -translate-y-1/2 w-3 h-0.5 bg-rose-400/60"></div>
-          <div class="flex items-center justify-between pb-1 border-b border-slate-800">
-            <div class="flex items-center gap-1.5">
-              <span class="text-sm">🔗</span>
-              <span class="text-xs font-bold text-rose-300">Resource Relationship</span>
-            </div>
-            <span class="font-mono text-[9px] text-slate-400 bg-slate-800 px-1.5 py-0.5 rounded">relationship.txt</span>
-          </div>
-          <div class="mt-1.5 text-[10.5px] text-slate-300 leading-snug">
-            1 occurrence ➔ N biotic interactions (host-parasite, prey)
-          </div>
-          <div class="mt-1.5 flex items-center justify-between text-[10px] font-mono">
-            <span class="text-rose-400 bg-rose-950/60 border border-rose-800/60 px-1.5 py-0.5 rounded">FK: coreId</span>
-            <span class="text-slate-400">1 : N relation</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Bottom Container Banner -->
-    <div class="w-full max-w-[880px] p-2 rounded-xl bg-slate-900 border border-slate-700/80 flex items-center justify-between text-xs shadow-md">
-      <div class="flex items-center gap-2">
-        <span class="text-sm">📦</span>
-        <span class="text-slate-300 text-[11px]">
-          <strong>Darwin Core Archive (.zip):</strong> Tied together by
-          <code class="px-1.5 py-0.2 rounded bg-slate-800 text-amber-300 border border-slate-700 font-mono text-[10.5px]">meta.xml</code>
-          (maps foreign keys <code class="text-sky-300 font-mono">coreId ➔ occurrenceID</code>) and
-          <code class="px-1.5 py-0.2 rounded bg-slate-800 text-purple-300 border border-slate-700 font-mono text-[10.5px]">eml.xml</code>
-          (dataset metadata & citation).
+      <!-- Top Legend -->
+      <div class="w-full flex items-center justify-between pb-1.5 mb-1 border-b border-slate-800/80 text-xs font-mono">
+        <span class="text-slate-300 font-semibold text-[11px] flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-sky-400"></span>
+          DwC-A Topology: 1 Core Hub + N Star Satellites
         </span>
+        <div class="flex items-center gap-3 text-[10.5px]">
+          <span class="flex items-center gap-1.5 text-sky-400 font-bold">
+            <span class="w-3.5 h-0.5 bg-sky-400 inline-block"></span>
+            1:N Spoke (coreId ➔ PK)
+          </span>
+          <span class="px-2 py-0.2 rounded bg-sky-950 text-sky-300 border border-sky-600/50 text-[10px]">
+            Strict Star Schema
+          </span>
+        </div>
       </div>
-      <div class="hidden md:flex items-center gap-1 font-mono text-[10px] text-sky-400 font-semibold whitespace-nowrap pl-2">
-        <span>⭐ 1 Core : N Extensions</span>
+
+      <!-- Diagram Canvas -->
+      <div class="relative w-full h-[275px]">
+        
+        <!-- SVG Connecting Arrows (Layer 0) -->
+        <svg class="absolute inset-0 w-full h-full pointer-events-none z-0" viewBox="0 0 860 275">
+          <defs>
+            <marker id="arrow-rose" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#f43f5e" />
+            </marker>
+            <marker id="arrow-orange" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#fb923c" />
+            </marker>
+            <marker id="arrow-purple" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#c084fc" />
+            </marker>
+            <marker id="arrow-amber" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#fbbf24" />
+            </marker>
+            <marker id="arrow-indigo" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#818cf8" />
+            </marker>
+            <marker id="arrow-cyan" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2dd4bf" />
+            </marker>
+          </defs>
+
+          <!-- Spoke 1: multimedia (Top-Left) -> CORE (Center) -->
+          <line x1="249" y1="67" x2="368" y2="112" stroke="#f43f5e" stroke-width="2" marker-end="url(#arrow-rose)" />
+
+          <!-- Spoke 2: literature (Mid-Left) -> CORE (Center) -->
+          <line x1="126" y1="135" x2="364" y2="135" stroke="#fb923c" stroke-width="2" marker-end="url(#arrow-orange)" />
+
+          <!-- Spoke 3: sequences (Bottom-Left) -> CORE (Center) -->
+          <line x1="249" y1="203" x2="368" y2="158" stroke="#c084fc" stroke-width="2" marker-end="url(#arrow-purple)" />
+
+          <!-- Spoke 4: measurements (Top-Right) -> CORE (Center) -->
+          <line x1="611" y1="67" x2="492" y2="112" stroke="#fbbf24" stroke-width="2" marker-end="url(#arrow-amber)" />
+
+          <!-- Spoke 5: taxa (Mid-Right) -> CORE (Center) -->
+          <line x1="734" y1="135" x2="496" y2="135" stroke="#818cf8" stroke-width="2" marker-end="url(#arrow-indigo)" />
+
+          <!-- Spoke 6: interactions (Bottom-Right) -> CORE (Center) -->
+          <line x1="611" y1="203" x2="492" y2="158" stroke="#2dd4bf" stroke-width="2" marker-end="url(#arrow-cyan)" />
+        </svg>
+
+        <!-- Central High-Level Pill above Core Hub -->
+        <div class="absolute left-1/2 -translate-x-1/2 top-[10px] z-10 pointer-events-none">
+          <span class="px-3 py-0.5 rounded-full text-[9px] font-mono font-bold text-sky-200 bg-sky-950/90 border border-sky-500/80 shadow-md flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>
+            All Foreign Keys Must Point Directly to 1 Core Hub
+          </span>
+        </div>
+
+        <!-- ================= SATELLITE EXTENSIONS (CIRCLES) ================= -->
+
+        <!-- 1. MULTIMEDIA (Top-Left) -->
+        <div class="absolute left-[169px] top-[11px] z-10 flex flex-col items-center">
+          <div class="w-[82px] h-[82px] rounded-full bg-gradient-to-br from-rose-950 via-slate-900 to-rose-900 border-2 border-rose-400 shadow-lg shadow-rose-500/20 flex flex-col items-center justify-center p-1 text-center hover:scale-105 transition-transform cursor-pointer">
+            <span class="text-[11px]">📸</span>
+            <div class="text-[10px] font-black text-white leading-tight">multimedia</div>
+            <div class="text-[6.5px] font-mono text-rose-300 font-bold uppercase">Audubon Core</div>
+            <div class="text-[6.5px] font-mono text-rose-400 font-bold">FK: coreId</div>
+          </div>
+          <span class="text-[7.5px] font-mono text-slate-400 mt-0.5">Photos · Audio · 3D</span>
+        </div>
+
+        <!-- 2. LITERATURE (Mid-Left) -->
+        <div class="absolute left-[44px] top-[94px] z-10 flex flex-col items-center">
+          <div class="w-[82px] h-[82px] rounded-full bg-gradient-to-br from-orange-950 via-slate-900 to-orange-900 border-2 border-orange-400 shadow-md shadow-orange-500/20 flex flex-col items-center justify-center p-1 text-center hover:scale-105 transition-transform cursor-pointer">
+            <span class="text-[11px]">📚</span>
+            <div class="text-[10px] font-black text-white leading-tight">literature</div>
+            <div class="text-[6.5px] font-mono text-orange-300 font-bold uppercase">Papers & DOIs</div>
+            <div class="text-[6.5px] font-mono text-orange-400 font-bold">FK: coreId</div>
+          </div>
+          <span class="text-[7.5px] font-mono text-slate-400 mt-0.5">Studies & Grants</span>
+        </div>
+
+        <!-- 3. DNA / SEQUENCES (Bottom-Left) -->
+        <div class="absolute left-[169px] top-[177px] z-10 flex flex-col items-center">
+          <div class="w-[82px] h-[82px] rounded-full bg-gradient-to-br from-purple-950 via-slate-900 to-purple-900 border-2 border-purple-400 shadow-lg shadow-purple-500/20 flex flex-col items-center justify-center p-1 text-center hover:scale-105 transition-transform cursor-pointer">
+            <span class="text-[11px]">🧬</span>
+            <div class="text-[10px] font-black text-white leading-tight">sequences</div>
+            <div class="text-[6.5px] font-mono text-purple-300 font-bold uppercase">GGBN / MIxS</div>
+            <div class="text-[6.5px] font-mono text-purple-400 font-bold">FK: coreId</div>
+          </div>
+          <span class="text-[7.5px] font-mono text-slate-400 mt-0.5">Barcodes · eDNA</span>
+        </div>
+
+        <!-- 4. CENTER: THE CORE HUB (LARGER CIRCLE) -->
+        <div class="absolute left-1/2 -translate-x-1/2 top-[135px] -translate-y-1/2 z-20 flex flex-col items-center">
+          <div class="w-[126px] h-[126px] rounded-full bg-gradient-to-br from-emerald-950 via-slate-900 to-sky-950 border-3 border-emerald-400 shadow-2xl shadow-emerald-500/30 flex flex-col items-center justify-center p-1.5 text-center hover:scale-105 transition-transform cursor-pointer ring-4 ring-emerald-500/10">
+            <div class="flex items-center gap-1 text-[8.5px] font-mono text-amber-300 font-bold uppercase tracking-wider mb-0.5">
+              <span>⭐</span> CORE HUB
+            </div>
+            <div class="text-[13px] font-black text-white leading-tight">Occurrence</div>
+            <div class="text-[8px] font-mono text-emerald-300 font-bold uppercase">occurrence.txt</div>
+            <div class="mt-1 px-2 py-0.5 rounded bg-slate-950/90 border border-emerald-500/40 text-[7.5px] font-mono text-slate-300">
+              PK: <span class="text-emerald-300 font-bold">occurrenceID</span>
+            </div>
+          </div>
+          <span class="text-[8px] font-mono text-emerald-300/90 font-bold mt-1">Central Biological Entity</span>
+        </div>
+
+        <!-- 5. MEASUREMENTS (Top-Right) -->
+        <div class="absolute left-[609px] top-[11px] z-10 flex flex-col items-center">
+          <div class="w-[82px] h-[82px] rounded-full bg-gradient-to-br from-amber-950 via-slate-900 to-amber-900 border-2 border-amber-400 shadow-lg shadow-amber-500/20 flex flex-col items-center justify-center p-1 text-center hover:scale-105 transition-transform cursor-pointer">
+            <span class="text-[11px]">📏</span>
+            <div class="text-[10px] font-black text-white leading-tight">measurements</div>
+            <div class="text-[6.5px] font-mono text-amber-300 font-bold uppercase">eMoF Extension</div>
+            <div class="text-[6.5px] font-mono text-amber-400 font-bold">FK: coreId</div>
+          </div>
+          <span class="text-[7.5px] font-mono text-slate-400 mt-0.5">Traits · Sensors</span>
+        </div>
+
+        <!-- 6. TAXA (Mid-Right) -->
+        <div class="absolute left-[734px] top-[94px] z-10 flex flex-col items-center">
+          <div class="w-[82px] h-[82px] rounded-full bg-gradient-to-br from-indigo-950 via-slate-900 to-indigo-900 border-2 border-indigo-400 shadow-md shadow-indigo-500/20 flex flex-col items-center justify-center p-1 text-center hover:scale-105 transition-transform cursor-pointer">
+            <span class="text-[11px]">🏷️</span>
+            <div class="text-[10px] font-black text-white leading-tight">taxa</div>
+            <div class="text-[6.5px] font-mono text-indigo-300 font-bold uppercase">Concepts & IDs</div>
+            <div class="text-[6.5px] font-mono text-indigo-400 font-bold">FK: coreId</div>
+          </div>
+          <span class="text-[7.5px] font-mono text-slate-400 mt-0.5">Checklists & Trees</span>
+        </div>
+
+        <!-- 7. INTERACTIONS (Bottom-Right) -->
+        <div class="absolute left-[609px] top-[177px] z-10 flex flex-col items-center">
+          <div class="w-[82px] h-[82px] rounded-full bg-gradient-to-br from-cyan-950 via-slate-900 to-cyan-900 border-2 border-cyan-400 shadow-md shadow-cyan-500/20 flex flex-col items-center justify-center p-1 text-center hover:scale-105 transition-transform cursor-pointer">
+            <span class="text-[11px]">🕸️</span>
+            <div class="text-[10px] font-black text-white leading-tight">interactions</div>
+            <div class="text-[6.5px] font-mono text-cyan-300 font-bold uppercase">Resource Rel.</div>
+            <div class="text-[6.5px] font-mono text-cyan-400 font-bold">FK: coreId</div>
+          </div>
+          <span class="text-[7.5px] font-mono text-slate-400 mt-0.5">Host · Prey · Symbiont</span>
+        </div>
+
       </div>
+
+      <!-- Bottom Explanatory Banner -->
+      <div class="w-full bg-slate-900/90 border border-slate-800 rounded-lg px-3 py-1.5 flex items-center justify-between text-[10.5px] text-slate-300 mt-0.5">
+        <div class="flex items-center gap-1.5">
+          <span class="text-sky-400 font-bold">The Star Constraint:</span>
+          <span>In a Darwin Core Archive (.zip), every satellite file links back strictly to the central Core via <code class="text-sky-300 font-mono">coreId</code> defined in <code class="text-amber-300 font-mono">meta.xml</code>. Extensions cannot point to other extensions!</span>
+        </div>
+      </div>
+
     </div>
+
   </div>
 </template>
