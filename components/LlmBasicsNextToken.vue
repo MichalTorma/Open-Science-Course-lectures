@@ -15,6 +15,7 @@
         </div>
       </div>
 
+
       <div class="flex items-center gap-1.5 text-[10px] font-mono text-slate-400">
         <span class="text-slate-500">No Search</span>
         <span class="text-slate-700">·</span>
