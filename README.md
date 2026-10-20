@@ -82,20 +82,20 @@ This creates:
 ├── docs/                             # GitHub Pages publish directory
 │   ├── index.html                    # Visual course portal landing page
 │   ├── .nojekyll                     # Ensures assets are served by GitHub Pages
-│   ├── 01-open-science-intro/        # Built SPA & vector PDF for Lecture 01
+│   ├── 01-darwin-core-publishing-ipt/# Built SPA & vector PDF for Lecture 01
 │   │   ├── index.html
 │   │   └── slides.pdf
-│   └── 02-open-data-and-code/        # Built SPA & vector PDF for Lecture 02
+│   └── 02-using-ai-in-data-publishing/# Built SPA & vector PDF for Lecture 02
 │       ├── index.html
 │       └── slides.pdf
 │
 ├── lectures/                         # Source presentations
-│   ├── 01-open-science-intro/
+│   ├── 01-darwin-core-publishing-ipt/
 │   │   ├── slides.md                 # Slidev Markdown content
 │   │   └── components/               # Custom interactive Vue components
-│   │       └── FairExplorer.vue      # Example interactive FAIR principle widget
-│   └── 02-open-data-and-code/
-│       └── slides.md
+│   └── 02-using-ai-in-data-publishing/
+│       ├── slides.md
+│       └── components/
 │
 ├── components/                       # Shared Vue components across all lectures
 ├── scripts/

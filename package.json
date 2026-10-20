@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "slidev lectures/01-darwin-core-publishing-ipt/slides.md",
     "dev:01": "slidev lectures/01-darwin-core-publishing-ipt/slides.md --open",
-    "dev:02": "slidev lectures/02-open-data-and-code/slides.md --open",
-    "dev:03": "slidev lectures/03-using-ai-in-data-publishing/slides.md --open",
+    "dev:02": "slidev lectures/02-using-ai-in-data-publishing/slides.md --open",
     "build": "node scripts/build-all.mjs",
     "build:quick": "node scripts/build-all.mjs --skip-pdf",
     "export:pdf": "node scripts/build-all.mjs --pdf-only",
