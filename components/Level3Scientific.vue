@@ -1,41 +1,42 @@
 <template>
   <LanguageLevelSlide
-    icon="🐍"
+    icon="📊"
     titleColorClass="text-emerald-400"
     borderClass="border-emerald-500/30"
     codeBorderClass="border-emerald-500/40"
-    pillClass="bg-emerald-950/40 border-emerald-600/40 text-emerald-200"
-    conceptTitle="Expressing Scientific Logic"
-    conceptDescription="High-level scientific languages manage memory automatically via garbage collection. Instead of writing byte pointers, scientists manipulate <strong>DataFrames, vectors, and rich domain objects</strong>."
+    conceptTitle="Expressing Scientific Logic in R"
+    conceptDescription="High-level languages like <strong>R</strong> manage memory automatically via garbage collection. Instead of writing byte pointers and managing registers, scientists manipulate <strong>DataFrames, tibbles, vectors, and domain models</strong>."
     :bulletPoints="bulletPoints"
-    codeHeaderLeft="PYTHON / PANDAS"
-    codeHeaderRight="Scientific Objects"
+    codeHeaderLeft="R / TIDYVERSE"
+    codeHeaderRight="DataFrames & Pipes"
     :codeHtml="codeHtml"
-    semanticDistance="Low (Speaks in tabular scientific objects)"
+    semanticDistance="Low (Speaks in tabular domain objects)"
   />
 </template>
 
 <script setup>
 const bulletPoints = [
   {
-    icon: '📊',
+    icon: '📋',
     title: 'Domain-First Data Structures',
-    text: 'DataFrames (pandas, tidyverse, polars) mirror how researchers naturally organize experimental spreadsheets.'
+    text: 'DataFrames and tibbles directly mirror how biodiversity researchers organize field observations and experimental spreadsheets.'
   },
   {
     icon: '📦',
     title: 'Rich Open Science Ecosystem',
-    text: 'Thousands of specialized libraries for geospatial analysis (sf), biodiversity querying (rgbif), and statistical modeling.'
+    text: 'Deep ecosystem of specialized R packages (tidyverse, rgbif, sf, vegan) for geospatial mapping, Darwin Core validation, and modeling.'
   }
 ]
 
 const codeHtml = `
-<div class="text-emerald-400 font-bold"># Clean & filter occurrences</div>
-<div>clean_df = (</div>
-<div class="pl-3">df.dropna(subset=[<span class="text-amber-300">'decimalLatitude'</span>])</div>
-<div class="pl-5">.query(<span class="text-amber-300">'year >= 2000'</span>)</div>
-<div class="pl-5">.groupby(<span class="text-amber-300">'scientificName'</span>)</div>
-<div class="pl-5">.count()</div>
-<div>)</div>
+<div class="text-slate-500"># Clean & summarize occurrences</div>
+<div>clean_occ <span class="text-emerald-400">&lt;-</span> occurrences <span class="text-sky-300">%&gt;%</span></div>
+<div class="pl-3"><span class="text-sky-300">filter</span>(!<span class="text-yellow-300">is.na</span>(decimalLatitude)) <span class="text-sky-300">%&gt;%</span></div>
+<div class="pl-3"><span class="text-sky-300">filter</span>(year <span class="text-emerald-400">&gt;=</span> <span class="text-purple-300">2000</span>) <span class="text-sky-300">%&gt;%</span></div>
+<div class="pl-3"><span class="text-sky-300">group_by</span>(scientificName) <span class="text-sky-300">%&gt;%</span></div>
+<div class="pl-3"><span class="text-sky-300">summarise</span>(</div>
+<div class="pl-6">n_obs <span class="text-emerald-400">=</span> <span class="text-yellow-300">n</span>(),</div>
+<div class="pl-6">min_lat <span class="text-emerald-400">=</span> <span class="text-yellow-300">min</span>(decimalLatitude)</div>
+<div class="pl-3">)</div>
 `
 </script>

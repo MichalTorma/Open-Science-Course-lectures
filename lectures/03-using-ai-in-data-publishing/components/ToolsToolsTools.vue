@@ -1,0 +1,42 @@
+<template>
+  <div class="h-full w-full select-none flex flex-col items-center justify-center p-6 bg-slate-950 text-white overflow-hidden relative font-sans">
+    
+    <!-- Ambient Background Radial Glow -->
+    <div class="absolute w-[500px] h-[300px] bg-gradient-to-r from-emerald-500/15 via-teal-500/10 to-sky-500/15 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="my-auto flex flex-col items-center text-center z-10">
+      
+      <!-- Small Eyebrow Badge -->
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-xs font-mono tracking-widest mb-6 shadow-sm">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+        THE CRITICAL INGREDIENT FOR AI IN SCIENCE
+      </div>
+
+      <!-- Main Statement (Using div to prevent theme-seriph h1 color override) -->
+      <div class="text-6xl md:text-7xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-teal-100 to-sky-200 lowercase leading-tight drop-shadow-[0_0_35px_rgba(52,211,153,0.3)] font-sans">
+        tools, tools, tools...
+      </div>
+
+      <!-- Minimal Subtitle -->
+      <div class="mt-8 text-xs font-mono text-slate-400 tracking-wider flex items-center gap-3">
+        <span class="text-emerald-400/90 font-semibold">APIs</span>
+        <span class="text-slate-700">·</span>
+        <span class="text-teal-400/90 font-semibold">Schemas</span>
+        <span class="text-slate-700">·</span>
+        <span class="text-sky-400/90 font-semibold">Validators</span>
+        <span class="text-slate-700">·</span>
+        <span class="text-indigo-400/90 font-semibold">Code Interpreters</span>
+      </div>
+
+    </div>
+
+    <!-- Bottom Margin Credit -->
+    <div class="absolute bottom-4 text-[10px] font-mono text-slate-600">
+      Grounding AI in Deterministic Scientific Infrastructure
+    </div>
+
+  </div>
+</template>
+
+<script setup>
+</script>

@@ -125,22 +125,52 @@ layout: default
 layout: default
 ---
 
-# Level 3 · Scientific Languages (Python & R)
+# Level 3 · Scientific Computing in R
 
 <span class="text-xs text-slate-300 block -mt-2 mb-3">
-  Automated memory, object-oriented semantics, and expressiveness tailored to data analysis.
+  Automated memory, domain objects (DataFrames/tibbles), and expressiveness tailored to data analysis.
 </span>
 
 <Level3Scientific />
 
 ---
-layout: default
+layout: full
+background: '#020617'
+class: p-4 h-full w-full bg-slate-950 text-white overflow-hidden flex flex-col justify-between
 ---
 
-# The Semantic Distance of Programming Languages
-
-<span class="text-xs text-slate-300 block -mt-2 mb-2">
-  How far must a scientist travel from their mental domain model to instruct a computer?
-</span>
-
 <SemanticDistanceGraph />
+
+---
+layout: full
+background: '#020617'
+class: p-4 h-full w-full bg-slate-950 text-white overflow-hidden flex flex-col justify-between
+---
+
+<TrustOnion />
+
+---
+layout: full
+background: '#020617'
+class: p-4 h-full w-full bg-slate-950 text-white overflow-hidden flex flex-col justify-between
+---
+
+<LlmBasicsNextToken />
+
+---
+layout: full
+background: '#020617'
+class: p-4 h-full w-full bg-slate-950 text-white overflow-hidden flex flex-col justify-between
+---
+
+<TamingTheBeastGrounding />
+
+---
+layout: full
+background: '#020617'
+class: p-4 h-full w-full bg-slate-950 text-white overflow-hidden flex flex-col justify-between
+---
+
+<ToolsToolsTools />
+
+
