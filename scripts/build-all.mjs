@@ -142,8 +142,23 @@ for (const lecture of lectures) {
 
   if (!pdfOnly) {
     console.log(`\n🔨 Building SPA presentation...`)
+    // Clean old assets directory to avoid accumulating obsolete hashed bundles
+    const assetsDir = path.join(lectureOutDir, 'assets')
+    if (fs.existsSync(assetsDir)) {
+      fs.rmSync(assetsDir, { recursive: true, force: true })
+    }
     const buildCmd = `npx slidev build "${lecture.slidesPath}" --out "${lectureOutDir}" --base "${lectureBase}" --router-mode hash --download`
     execSync(buildCmd, { stdio: 'inherit', cwd: rootDir })
+
+    // Ensure images are present in output folder
+    const lecturePublicImages = path.join(lecture.dirPath, 'public', 'images')
+    const rootPublicImages = path.join(rootDir, 'public', 'images')
+    const outImages = path.join(lectureOutDir, 'images')
+    if (fs.existsSync(lecturePublicImages)) {
+      fs.cpSync(lecturePublicImages, outImages, { recursive: true })
+    } else if (fs.existsSync(rootPublicImages)) {
+      fs.cpSync(rootPublicImages, outImages, { recursive: true })
+    }
   }
 
   if (!skipPdf) {

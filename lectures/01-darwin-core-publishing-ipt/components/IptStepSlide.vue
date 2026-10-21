@@ -7,7 +7,7 @@
       <div class="col-span-8 flex flex-col items-center">
         <div class="w-full rounded-2xl overflow-hidden border border-slate-700 shadow-xl bg-white p-2.5">
           <img 
-            :src="imageSrc" 
+            :src="resolvedImageSrc" 
             :alt="title" 
             class="w-full max-h-[235px] object-contain rounded" 
           />
@@ -44,10 +44,27 @@
 </template>
 
 <script setup>
-defineProps({
+import { computed } from 'vue'
+
+const props = defineProps({
   imageSrc: { type: String, required: true },
   caption: { type: String, default: '' },
   title: { type: String, default: '' },
   cards: { type: Array, required: true }
+})
+
+const resolvedImageSrc = computed(() => {
+  if (!props.imageSrc) return ''
+  if (
+    props.imageSrc.startsWith('http://') ||
+    props.imageSrc.startsWith('https://') ||
+    props.imageSrc.startsWith('data:')
+  ) {
+    return props.imageSrc
+  }
+  const base = (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.BASE_URL) || '/'
+  const cleanBase = base.endsWith('/') ? base : `${base}/`
+  const cleanPath = props.imageSrc.startsWith('/') ? props.imageSrc.slice(1) : props.imageSrc
+  return `${cleanBase}${cleanPath}`
 })
 </script>
