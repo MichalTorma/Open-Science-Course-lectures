@@ -14,23 +14,33 @@ info: |
 fonts:
   sans: 'Inter'
   serif: 'Playfair Display'
-  mono: 'Fira Code'
+  mono: 'JetBrains Mono'
 ---
 
-# Using AI in Data Publishing
+<div class="my-auto">
+  <div class="inline-flex items-center gap-2 px-3 py-1 mb-4 rounded-full bg-cyan-500/20 border border-cyan-400/30 text-cyan-300 text-xs font-mono tracking-wide">
+    <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+    Computational Abstractions · LLM Grounding · GBIF Data Publishing
+  </div>
 
-<p class="text-xl text-sky-400 font-semibold mt-2">
-  From Unstructured Spreadsheets to Standardized GBIF Datasets + Hands-On AI Exercise
-</p>
+  <h1 class="text-4xl font-extrabold tracking-tight text-white mb-3">
+    Using AI in Data Publishing
+  </h1>
 
-<div class="pt-8">
-  <span @click="$slidev.nav.next" class="px-6 py-3 rounded-full cursor-pointer bg-emerald-600 hover:bg-emerald-500 text-white font-medium shadow-lg transition duration-200 ease-in-out">
-    Start Presentation <carbon:arrow-right class="inline"/>
-  </span>
+  <p class="text-lg text-slate-300 max-w-2xl mx-auto font-light leading-relaxed">
+    From unstructured spreadsheets to standardized GBIF datasets + hands-on AI exercise.
+  </p>
+
+  <div class="pt-8">
+    <span @click="$slidev.nav.next" class="px-6 py-2.5 rounded-full cursor-pointer bg-indigo-600 hover:bg-indigo-500 text-white font-medium shadow-lg transition duration-200 ease-in-out inline-flex items-center gap-2">
+      Begin Lecture <carbon:arrow-right class="inline"/>
+    </span>
+  </div>
 </div>
 
-<div class="abs-bottom-margin mb-8 text-sm opacity-60">
-  Michal Torma · Open Science Course · 2026
+<div class="abs-bottom-margin mb-6 text-xs text-slate-400 flex justify-between px-10 w-full">
+  <span>Open Science Course</span>
+  <span>CC-BY 4.0 International</span>
 </div>
 
 ---
